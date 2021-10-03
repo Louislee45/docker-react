@@ -8,6 +8,6 @@ before_install:
 # run commands to test suite
 script:
   # -- --coverage: to automatically exit test when test is done
-  - docker run mydemo npm run test -- --coverage
+  - docker run -e CI=true mydemo npm run test
   
 
