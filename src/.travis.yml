@@ -1,0 +1,13 @@
+# super user permission
+sudo: required
+services:
+  - docker
+# 
+before_install:
+  - docker build -t firstCIDemo -f Dockerfile.dev .
+# run commands to test suite
+script:
+  # -- --coverage: to automatically exit test when test is done
+  - docker run firstCIDemo npm run test -- --coverage
+  
+
